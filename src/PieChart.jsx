@@ -130,9 +130,9 @@ let PieChart = React.createClass({
 		padRadius: React.PropTypes.string,
 		cornerRadius: React.PropTypes.number,
 		sort: React.PropTypes.any,
-        viewBox: React.Proptypes.string,
-        preserveAspectRatio: React.Proptypes.string,
-        style: React.Proptypes.object
+        viewBox: React.PropTypes.string,
+        preserveAspectRatio: React.PropTypes.string,
+        style: React.PropTypes.object
 	},
 
 	getDefaultProps() {
