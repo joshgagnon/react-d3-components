@@ -129,7 +129,10 @@ let PieChart = React.createClass({
 		labelRadius: React.PropTypes.number,
 		padRadius: React.PropTypes.string,
 		cornerRadius: React.PropTypes.number,
-		sort: React.PropTypes.any
+		sort: React.PropTypes.any,
+        viewBox: React.Proptypes.string,
+        preserveAspectRatio: React.Proptypes.string,
+        style: React.Proptypes.object
 	},
 
 	getDefaultProps() {
@@ -160,6 +163,8 @@ let PieChart = React.createClass({
 			 labelRadius,
 			 padRadius,
 			 cornerRadius,
+             viewBox,
+             preserveAspectRatio,
 			 sort,
 			 x,
 			 y,
@@ -202,9 +207,16 @@ let PieChart = React.createClass({
 		let pieData = pie(values(data));
 
 		let translation = `translate(${innerWidth/2}, ${innerHeight/2})`;
+        let chartProps = {
+            height: height,
+            width: widget,
+            margin: margin,
+            viewBox: viewBox,
+            preserveAspectRatio: preserveAspectRatio
+        }
 		return (
 			<div>
-				<Chart height={height} width={width} margin={margin}>
+				<Chart {...chartProps}>
 				<g transform={translation}>
 				<DataSet
 			width={innerWidth}
