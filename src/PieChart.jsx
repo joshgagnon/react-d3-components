@@ -211,7 +211,7 @@ let PieChart = createReactClass({
 		let translation = `translate(${innerWidth/2}, ${innerHeight/2})`;
         let chartProps = {
             height: height,
-            width: widget,
+            width: width,
             margin: margin,
             viewBox: viewBox,
             preserveAspectRatio: preserveAspectRatio
