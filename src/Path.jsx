@@ -1,16 +1,18 @@
 let React = require('react');
+let createReactClass = require('create-react-class');
+let PropTypes = require('prop-types');
 let d3 = require('d3');
 
-let Path = React.createClass({
+let Path = createReactClass({
     propTypes: {
-        className: React.PropTypes.string,
-        stroke: React.PropTypes.string.isRequired,
-        strokeLinecap: React.PropTypes.string,
-        strokeWidth: React.PropTypes.string,
-        strokeDasharray: React.PropTypes.string,
-        fill: React.PropTypes.string,
-        d: React.PropTypes.string.isRequired,
-        data: React.PropTypes.array.isRequired
+        className: PropTypes.string,
+        stroke: PropTypes.string.isRequired,
+        strokeLinecap: PropTypes.string,
+        strokeWidth: PropTypes.string,
+        strokeDasharray: PropTypes.string,
+        fill: PropTypes.string,
+        d: PropTypes.string.isRequired,
+        data: PropTypes.array.isRequired
     },
 
     getDefaultProps() {

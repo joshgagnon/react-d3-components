@@ -1,19 +1,21 @@
 let React = require('react');
+let createReactClass = require('create-react-class');
+let PropTypes = require('prop-types');
 let d3 = require('d3');
 
-let Bar = React.createClass({
+let Bar = createReactClass({
     propTypes: {
-        width: React.PropTypes.number.isRequired,
-        height: React.PropTypes.number.isRequired,
-        x: React.PropTypes.number.isRequired,
-        y: React.PropTypes.number.isRequired,
-        fill: React.PropTypes.string.isRequired,
-        data: React.PropTypes.oneOfType([
-            React.PropTypes.array,
-            React.PropTypes.object
+        width: PropTypes.number.isRequired,
+        height: PropTypes.number.isRequired,
+        x: PropTypes.number.isRequired,
+        y: PropTypes.number.isRequired,
+        fill: PropTypes.string.isRequired,
+        data: PropTypes.oneOfType([
+            PropTypes.array,
+            PropTypes.object
         ]).isRequired,
-        onMouseEnter: React.PropTypes.func,
-        onMouseLeave: React.PropTypes.func
+        onMouseEnter: PropTypes.func,
+        onMouseLeave: PropTypes.func
     },
 
     render() {

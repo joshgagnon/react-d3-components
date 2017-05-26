@@ -1,4 +1,6 @@
 let React = require('react');
+let createReactClass = require('create-react-class');
+let PropTypes = require('prop-types');
 let d3 = require('d3');
 
 let Chart = require('./Chart');
@@ -14,13 +16,13 @@ let StackDataMixin = require('./StackDataMixin');
 let DefaultScalesMixin = require('./DefaultScalesMixin');
 let TooltipMixin = require('./TooltipMixin');
 
-let DataSet = React.createClass({
+let DataSet = createReactClass({
 	propTypes: {
-		data: React.PropTypes.array.isRequired,
-		area: React.PropTypes.func.isRequired,
-		line: React.PropTypes.func.isRequired,
-		colorScale: React.PropTypes.func.isRequired,
-		stroke: React.PropTypes.func.isRequired
+		data: PropTypes.array.isRequired,
+		area: PropTypes.func.isRequired,
+		line: PropTypes.func.isRequired,
+		colorScale: PropTypes.func.isRequired,
+		stroke: PropTypes.func.isRequired
 	},
 
 	render() {
@@ -68,7 +70,7 @@ let DataSet = React.createClass({
 	}
 });
 
-let AreaChart = React.createClass({
+let AreaChart = createReactClass({
 	mixins: [DefaultPropsMixin,
 			 HeightWidthMixin,
 			 ArrayifyMixin,
@@ -78,8 +80,8 @@ let AreaChart = React.createClass({
 			 TooltipMixin],
 
 	propTypes: {
-		interpolate: React.PropTypes.string,
-		stroke: React.PropTypes.func
+		interpolate: PropTypes.string,
+		stroke: PropTypes.func
 	},
 
 	getDefaultProps() {

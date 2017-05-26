@@ -1,4 +1,6 @@
 let React = require('react');
+let createReactClass = require('create-react-class');
+let PropTypes = require('prop-types');
 let d3 = require('d3');
 
 let Chart = require('./Chart');
@@ -9,10 +11,10 @@ let HeightWidthMixin = require('./HeightWidthMixin');
 let AccessorMixin = require('./AccessorMixin');
 let TooltipMixin = require('./TooltipMixin');
 
-let Wedge = React.createClass({
+let Wedge = createReactClass({
 	propTypes: {
-		d: React.PropTypes.string.isRequired,
-		fill: React.PropTypes.string.isRequired
+		d: PropTypes.string.isRequired,
+		fill: PropTypes.string.isRequired
 	},
 
 	render() {
@@ -29,18 +31,18 @@ let Wedge = React.createClass({
 	}
 });
 
-let DataSet = React.createClass({
+let DataSet = createReactClass({
 	propTypes: {
-		pie: React.PropTypes.array.isRequired,
-		arc: React.PropTypes.func.isRequired,
-		outerArc: React.PropTypes.func.isRequired,
-		colorScale: React.PropTypes.func.isRequired,
-		radius: React.PropTypes.number.isRequired,
-		strokeWidth: React.PropTypes.number,
-		stroke: React.PropTypes.string,
-		fill: React.PropTypes.string,
-		opacity: React.PropTypes.number,
-		x: React.PropTypes.func.isRequired
+		pie: PropTypes.array.isRequired,
+		arc: PropTypes.func.isRequired,
+		outerArc: PropTypes.func.isRequired,
+		colorScale: PropTypes.func.isRequired,
+		radius: PropTypes.number.isRequired,
+		strokeWidth: PropTypes.number,
+		stroke: PropTypes.string,
+		fill: PropTypes.string,
+		opacity: PropTypes.number,
+		x: PropTypes.func.isRequired
 	},
 
 	getDefaultProps() {
@@ -117,22 +119,22 @@ let DataSet = React.createClass({
 	}
 });
 
-let PieChart = React.createClass({
+let PieChart = createReactClass({
 	mixins: [DefaultPropsMixin,
 			 HeightWidthMixin,
 			 AccessorMixin,
 			 TooltipMixin],
 
 	propTypes: {
-		innerRadius: React.PropTypes.number,
-		outerRadius: React.PropTypes.number,
-		labelRadius: React.PropTypes.number,
-		padRadius: React.PropTypes.string,
-		cornerRadius: React.PropTypes.number,
-		sort: React.PropTypes.any,
-        viewBox: React.PropTypes.string,
-        preserveAspectRatio: React.PropTypes.string,
-        style: React.PropTypes.object
+		innerRadius: PropTypes.number,
+		outerRadius: PropTypes.number,
+		labelRadius: PropTypes.number,
+		padRadius: PropTypes.string,
+		cornerRadius: PropTypes.number,
+		sort: PropTypes.any,
+        viewBox: PropTypes.string,
+        preserveAspectRatio: PropTypes.string,
+        style: PropTypes.object
 	},
 
 	getDefaultProps() {

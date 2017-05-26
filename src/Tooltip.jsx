@@ -1,12 +1,14 @@
 let React = require('react');
+let createReactClass = require('create-react-class');
+let PropTypes = require('prop-types');
 let d3 = require('d3');
 
-let Tooltip = React.createClass({
+let Tooltip = createReactClass({
     propTypes: {
-        top: React.PropTypes.number.isRequired,
-        left: React.PropTypes.number.isRequired,
-        html: React.PropTypes.node,
-        translate: React.PropTypes.number
+        top: PropTypes.number.isRequired,
+        left: PropTypes.number.isRequired,
+        html: PropTypes.node,
+        translate: PropTypes.number
     },
 
     getDefaultProps() {

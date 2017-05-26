@@ -1,19 +1,21 @@
 let React = require('react');
+let createReactClass = require('create-react-class');
+let PropTypes = require('prop-types');
 let d3 = require('d3');
 
-let Axis = React.createClass({
+let Axis = createReactClass({
     propTypes: {
-        tickArguments: React.PropTypes.array,
-        tickValues: React.PropTypes.array,
-        tickFormat: React.PropTypes.func,
-        innerTickSize: React.PropTypes.number,
-        tickPadding: React.PropTypes.number,
-        outerTickSize: React.PropTypes.number,
-        scale: React.PropTypes.func.isRequired,
-        className: React.PropTypes.string,
-        zero: React.PropTypes.number,
-        orientation: React.PropTypes.oneOf(['top', 'bottom', 'left', 'right']).isRequired,
-        label: React.PropTypes.string
+        tickArguments: PropTypes.array,
+        tickValues: PropTypes.array,
+        tickFormat: PropTypes.func,
+        innerTickSize: PropTypes.number,
+        tickPadding: PropTypes.number,
+        outerTickSize: PropTypes.number,
+        scale: PropTypes.func.isRequired,
+        className: PropTypes.string,
+        zero: PropTypes.number,
+        orientation: PropTypes.oneOf(['top', 'bottom', 'left', 'right']).isRequired,
+        label: PropTypes.string
     },
 
     getDefaultProps() {
@@ -123,7 +125,7 @@ let Axis = React.createClass({
         });
 
         let pathElement = <path className="domain" d={d} fill="none" stroke="#aaa"/>;
-        
+
         let axisBackground = <rect className="axis-background" fill="none"/>;
 
         return (

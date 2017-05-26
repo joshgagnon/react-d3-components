@@ -1,9 +1,11 @@
 let React = require('react');
+let createReactClass = require('create-react-class');
+let PropTypes = require('prop-types');
 let d3 = require('d3');
 
 let DefaultScalesMixin = {
     propTypes: {
-        barPadding: React.PropTypes.number
+        barPadding: PropTypes.number
     },
 
     getDefaultProps() {

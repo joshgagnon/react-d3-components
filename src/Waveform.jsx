@@ -1,4 +1,6 @@
 let React = require('react');
+let createReactClass = require('create-react-class');
+let PropTypes = require('prop-types');
 let d3 = require('d3');
 
 let Chart = require('./Chart');
@@ -32,17 +34,17 @@ let subSample = function(a, n) {
       return returnArray;
     }
 
-let DataSet = React.createClass({
+let DataSet = createReactClass({
     propTypes: {
-        data: React.PropTypes.array.isRequired,
-        xScale: React.PropTypes.func.isRequired,
-        yScale: React.PropTypes.func.isRequired,
-        colorScale: React.PropTypes.func.isRequired,
-        values: React.PropTypes.func.isRequired,
-        label: React.PropTypes.func.isRequired,
-        x: React.PropTypes.func.isRequired,
-        y: React.PropTypes.func.isRequired,
-        y0: React.PropTypes.func.isRequired
+        data: PropTypes.array.isRequired,
+        xScale: PropTypes.func.isRequired,
+        yScale: PropTypes.func.isRequired,
+        colorScale: PropTypes.func.isRequired,
+        values: PropTypes.func.isRequired,
+        label: PropTypes.func.isRequired,
+        x: PropTypes.func.isRequired,
+        y: PropTypes.func.isRequired,
+        y0: PropTypes.func.isRequired
     },
 
     render() {
@@ -90,7 +92,7 @@ let DataSet = React.createClass({
     }
 });
 
-let Waveform = React.createClass({
+let Waveform = createReactClass({
     mixins: [DefaultPropsMixin,
              HeightWidthMixin,
              ArrayifyMixin,

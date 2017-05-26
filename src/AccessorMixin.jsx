@@ -1,12 +1,14 @@
 let React = require('react');
+let createReactClass = require('create-react-class');
+let PropTypes = require('prop-types');
 
 let AccessorMixin = {
     propTypes: {
-        label: React.PropTypes.func,
-        values: React.PropTypes.func,
-        x: React.PropTypes.func,
-        y: React.PropTypes.func,
-        y0: React.PropTypes.func
+        label: PropTypes.func,
+        values: PropTypes.func,
+        x: PropTypes.func,
+        y: PropTypes.func,
+        y0: PropTypes.func
     },
 
     getDefaultProps() {

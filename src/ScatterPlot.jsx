@@ -1,4 +1,6 @@
 let React = require('react');
+let createReactClass = require('create-react-class');
+let PropTypes = require('prop-types');
 let d3 = require('d3');
 
 let Chart = require('./Chart');
@@ -12,15 +14,15 @@ let AccessorMixin = require('./AccessorMixin');
 let DefaultScalesMixin = require('./DefaultScalesMixin');
 let TooltipMixin = require('./TooltipMixin');
 
-let DataSet = React.createClass({
+let DataSet = createReactClass({
 	propTypes: {
-		data: React.PropTypes.array.isRequired,
-		symbol: React.PropTypes.func.isRequired,
-		xScale: React.PropTypes.func.isRequired,
-		yScale: React.PropTypes.func.isRequired,
-		colorScale: React.PropTypes.func.isRequired,
-		onMouseEnter: React.PropTypes.func,
-		onMouseLeave: React.PropTypes.func
+		data: PropTypes.array.isRequired,
+		symbol: PropTypes.func.isRequired,
+		xScale: PropTypes.func.isRequired,
+		yScale: PropTypes.func.isRequired,
+		colorScale: PropTypes.func.isRequired,
+		onMouseEnter: PropTypes.func,
+		onMouseLeave: PropTypes.func
 	},
 
 	render() {
@@ -61,7 +63,7 @@ let DataSet = React.createClass({
 	}
 });
 
-let ScatterPlot = React.createClass({
+let ScatterPlot = createReactClass({
 	mixins: [DefaultPropsMixin,
 			 HeightWidthMixin,
 			 ArrayifyMixin,
@@ -70,8 +72,8 @@ let ScatterPlot = React.createClass({
 			 TooltipMixin],
 
 	propTypes: {
-		rScale: React.PropTypes.func,
-		shape: React.PropTypes.string
+		rScale: PropTypes.func,
+		shape: PropTypes.string
 	},
 
 	getDefaultProps() {

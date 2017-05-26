@@ -1,14 +1,16 @@
 let React = require('react');
+let createReactClass = require('create-react-class');
+let PropTypes = require('prop-types');
 let ReactDOM = require('react-dom');
 let d3 = require('d3');
 
 
 let TooltipMixin = {
     propTypes: {
-        tooltipHtml: React.PropTypes.func,
-        tooltipMode: React.PropTypes.oneOf(['mouse', 'element', 'fixed']),
-        tooltipContained: React.PropTypes.bool,
-        tooltipOffset: React.PropTypes.objectOf(React.PropTypes.number)
+        tooltipHtml: PropTypes.func,
+        tooltipMode: PropTypes.oneOf(['mouse', 'element', 'fixed']),
+        tooltipContained: PropTypes.bool,
+        tooltipOffset: PropTypes.objectOf(PropTypes.number)
     },
 
     getInitialState() {

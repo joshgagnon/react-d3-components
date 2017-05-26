@@ -1,9 +1,11 @@
 let React = require('react');
+let createReactClass = require('create-react-class');
+let PropTypes = require('prop-types');
 let d3 = require('d3');
 
 let StackDataMixin = {
     propTypes: {
-        offset: React.PropTypes.string
+        offset: PropTypes.string
     },
 
     getDefaultProps() {

@@ -1,4 +1,6 @@
 let React = require('react');
+let createReactClass = require('create-react-class');
+let PropTypes = require('prop-types');
 let ReactDOM = require('react-dom');
 let d3 = require('d3');
 
@@ -28,7 +30,7 @@ let _d3_svg_brushResizes = [
 ];
 
 // TODO: add y axis support
-let Brush = React.createClass({
+let Brush = createReactClass({
 	mixins: [HeightWidthMixin],
 
 	getInitialState() {
